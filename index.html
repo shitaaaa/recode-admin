@@ -38,7 +38,10 @@
     const hash = await sha256(pw);
     if (hash !== ADMIN_HASH) { alert("密碼錯誤"); return; }
     document.getElementById("login-screen").style.display = "none";
-    document.getElementById("app-screen").style.display = "";
+    const appScreen = document.getElementById("app-screen");
+    appScreen.style.display = "flex";
+    appScreen.style.flexDirection = "column";
+    appScreen.style.height = "100vh";
     loadAll();
   }
 
